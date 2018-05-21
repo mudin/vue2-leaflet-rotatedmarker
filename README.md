@@ -8,7 +8,7 @@ This is a [rotatedmarker plugin](https://github.com/Leaflet/Leaflet.rotatedmarke
 
 ## Demo
 
-    git clone git@github.com:jperelli/vue2-leaflet-rotatedmarker.git
+    git clone https://github.com/imudin/vue2-leaflet-rotatedmarker
     cd vue2-leaflet-rotatedmarker
     yarn
     yarn example
