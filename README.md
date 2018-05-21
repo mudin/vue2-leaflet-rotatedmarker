@@ -1,6 +1,6 @@
 # vue2-leaflet-rotatedmarker
 
-This is a [rotatedmarker plugin](https://github.com/Leaflet/Leaflet.rotatedmarker) extension for [vue2-leaflet package](https://github.com/KoRiGaN/Vue2Leaflet)
+This is a [RotatedMarker plugin](https://github.com/bbecquet/Leaflet.RotatedMarker) extension for [vue2-leaflet package](https://github.com/KoRiGaN/Vue2Leaflet)
 
 ## Install
 
