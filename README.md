@@ -30,11 +30,12 @@ something like this
     <v-map :zoom=10 :center="initialLocation">
       <v-icondefault :image-path="'/statics/leafletImages/'"></v-icondefault>
       <v-tilelayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></v-tilelayer>
-      <v-rotated-marker>
-        <v-marker v-for="c in cases" v-if="c.location !== null" :lat-lng="c.latlng">
-          <v-popup :content="c.tooltipContent"></v-popup>
-        </v-marker>
-      </v-rotated-marker>
+      <v-rotated-marker v-for="l in locations" :key="l.id" 
+        :lat-lng="l.latlng" 
+        :icon="icon" 
+        @click="handleMarkerClick(l)"
+        :rotationAngle="l.rotationAngle">
+    </v-rotated-marker>
     </v-map>
 
 ### on &lt;script&gt; add
@@ -63,26 +64,6 @@ At main Vue configuration, this will make the component available to all templat
     ...
     Vue.component('v-rotated-marker', Vue2LeafletRotatedMarker)
 
-### on &lt;style&gt; add
-
-    @import "~leaflet.rotatedmarker/dist/rotatedmarker.css";
-    @import "~leaflet.rotatedmarker/dist/rotatedmarker.Default.css";
-
-## Access rotatedmarker layer directly
-
-If you need to access other markecluster methods, like [refreshClusters()](https://github.com/Leaflet/Leaflet.rotatedmarker#refreshing-the-clusters-icon), you can do it with a ref on the rotatedmarker vue element and using the `mapObject` property
-
-    ...
-    <v-rotated-marker ref="clusterRef">
-      ...
-    </v-rotated-marker>
-    ...
-
-    ...
-    this.$refs.clusterRef.mapObject.refreshClusters()
-    ...
-
-
 ## Develop and build
 
     npm install
@@ -90,13 +71,10 @@ If you need to access other markecluster methods, like [refreshClusters()](https
 
 ## Author
 
-[Julián Perelli](https://jperelli.com.ar/)
+[imudin](https://github.com/imudin/)
 
-### Contributors
-
- - [Ahmet Özışık](https://github.com/aozisik)
- - [Nader Toukabri](https://nader.tech)
 
 ## License
 
 MIT
+rotated marker plugin extension for vue2-leaflet package
