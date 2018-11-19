@@ -6,8 +6,8 @@
 
 <script>
 import L from 'leaflet'
-import { findRealParent, propsBinder } from 'vue2-leaflet'
-import {RotatedMarker} from './rotatedMarker.js'
+import 'leaflet-rotatedmarker';
+import { findRealParent, propsBinder } from 'vue2-leaflet';
 
 const props = {
   draggable: {
@@ -56,7 +56,7 @@ export default {
     }
     options.draggable = this.draggable;
     options.rotationAngle = this.rotationAngle?this.rotationAngle:0;
-    this.mapObject = new RotatedMarker(this.latLng, options);
+    this.mapObject = L.marker(this.latLng, options);
     this.mapObject.on('move', (ev) => {
       if (Array.isArray(this.latLng)) {
         this.latLng[0] = ev.latlng.lat;
