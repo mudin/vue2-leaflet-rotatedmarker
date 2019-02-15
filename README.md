@@ -71,7 +71,7 @@ At main Vue configuration, this will make the component available to all templat
 
 ## Author
 
-[imudin](https://github.com/imudin/)
+[mudin](https://github.com/mudin/)
 
 
 ## License
