@@ -36,6 +36,10 @@ const props = {
     type: Number,
     default: () => 0,
   },
+  rotationOrigin: {
+    type: String,
+    default: 'bottom center'
+  },
   options: {
     type: Object,
     default: () => ({}),
@@ -56,6 +60,7 @@ export default {
     }
     options.draggable = this.draggable;
     options.rotationAngle = this.rotationAngle?this.rotationAngle:0;
+    options.rotationOrigin = this.rotationOrigin;
     this.mapObject = new Marker(this.latLng, options);
     this.mapObject.on('move', (ev) => {
       if (Array.isArray(this.latLng)) {
