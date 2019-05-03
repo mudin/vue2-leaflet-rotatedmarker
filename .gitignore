@@ -36,5 +36,6 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
+dist/Vue2LeafletRotatedMarker.js.map
 
 package-lock.json
