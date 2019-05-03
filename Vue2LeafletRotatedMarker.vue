@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import L from 'leaflet'
+import { Icon, Marker, DomEvent } from 'leaflet'
 import 'leaflet-rotatedmarker';
 import { findRealParent, propsBinder } from 'vue2-leaflet';
 
@@ -26,7 +26,7 @@ const props = {
   },
   icon: {
     custom: false,
-    default: () => new L.Icon.Default(),
+    default: () => new Icon.Default(),
   },
   zIndexOffset: {
     type: Number,
@@ -35,6 +35,10 @@ const props = {
   rotationAngle:{
     type: Number,
     default: () => 0,
+  },
+  rotationOrigin: {
+    type: String,
+    default: 'bottom center'
   },
   options: {
     type: Object,
@@ -56,7 +60,8 @@ export default {
     }
     options.draggable = this.draggable;
     options.rotationAngle = this.rotationAngle?this.rotationAngle:0;
-    this.mapObject = L.marker(this.latLng, options);
+    options.rotationOrigin = this.rotationOrigin;
+    this.mapObject = new Marker(this.latLng, options);
     this.mapObject.on('move', (ev) => {
       if (Array.isArray(this.latLng)) {
         this.latLng[0] = ev.latlng.lat;
@@ -66,7 +71,7 @@ export default {
         this.latLng.lng = ev.latlng.lng;
       }
     });
-    L.DomEvent.on(this.mapObject, this.$listeners);
+    DomEvent.on(this.mapObject, this.$listeners);
     propsBinder(this, this.mapObject, props);
     this.ready = true;
     this.parentContainer = findRealParent(this.$parent);
