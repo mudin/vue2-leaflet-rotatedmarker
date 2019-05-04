@@ -5,6 +5,7 @@
       :lat-lng="l.latlng" 
       :icon="icon" 
       @click="handleMarkerClick(l)"
+      :rotationOrigin="l.origin"
       :rotationAngle="l.yaw">
     </v-rotated-marker>
   </v-map>
@@ -45,6 +46,7 @@
         this.locations.push({
           id: i,
           yaw: Math.random() * 360 - 180,
+          origin:'bottom center',
           latlng: new LatLng(rand(-34.9205), rand(-57.953646)),
           text: 'Hola ' + i
         })

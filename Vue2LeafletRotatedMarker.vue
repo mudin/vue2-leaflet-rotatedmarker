@@ -38,7 +38,7 @@ const props = {
   },
   rotationOrigin: {
     type: String,
-    default: 'bottom center'
+    default: 'center center'
   },
   options: {
     type: Object,
