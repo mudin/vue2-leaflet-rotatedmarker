@@ -1,3 +1,19 @@
+<p align="center">
+  <a href="https://github.com/mudin/vue2-leaflet-rotatedmarker/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/mudin/vue2-leaflet-rotatedmarker.svg" alt="License">
+  </a>
+  <a href="https://badge.fury.io/js/vue2-leaflet-rotatedmarker">
+    <img src="https://badge.fury.io/js/vue2-leaflet-rotatedmarker.svg" alt="npm version">
+  </a>
+  <a href="http://hits.dwyl.io/mudin/vue2-leaflet-rotatedmarker">
+    <img src="http://hits.dwyl.io/mudin/vue2-leaflet-rotatedmarker.svg" alt="HitCount">
+  </a>
+  <a href="https://unpkg.com/vue2-leaflet-rotatedmarker@latest/dist/Vue2LeafletRotatedMarker.js">
+    <img src="https://img.badgesize.io/mudin/vue2-leaflet-rotatedmarker/master/dist/Vue2LeafletRotatedMarker.js?compression=gzip" alt="size">
+  </a>
+</p>
+
+
 # vue2-leaflet-rotatedmarker
 
 This is a [RotatedMarker plugin](https://github.com/bbecquet/Leaflet.RotatedMarker) extension for [vue2-leaflet package](https://github.com/KoRiGaN/Vue2Leaflet)
